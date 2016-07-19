@@ -16,13 +16,13 @@
     <link rel="stylesheet" href="css/style.css">
 
     <script>
-      
+      var app = angular.module('myApp', ['onsen','ngSanitize']);
     </script>
     <script src="scripts/basic.js"></script>
-
+    <script src="scripts/event.js"></script>
 
 </head>
-<body ng-controller="BasicController">
+<body ng-controller="myController">
   <form>
     memo:
     <div>
@@ -30,5 +30,11 @@
     </div>
   </form>
   <div ng-bind-html="memo | nl2br"></div>
+  <form>
+    <label for='name'>name: </label>
+    <input id='name' name='name' type='text' ng-model='myName' />
+    <button ng-click='onclick()'>send</button>
+    <div>{{greeting}}</div>
+  </form>
 </body>
 </html>
