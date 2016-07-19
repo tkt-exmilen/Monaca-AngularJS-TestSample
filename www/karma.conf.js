@@ -16,8 +16,10 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
       'lib/angular/angular.js',
-      'lib/angular/angular-mock.js',
+      'lib/angular/angular-mocks.js',
       'lib/angular/angular-sanitize.js',
+      'lib/onsenui/js/onsenui.min.js',
+      'lib/onsenui/js/angular-onsenui.min.js',
       'scripts/*.js',
       'spec/*_spec.js'
     ],

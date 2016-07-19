@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html>
+<html ng-app="myApp">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -8,6 +8,7 @@
     <script src="lib/angular/angular.min.js"></script>
     <script src="lib/onsenui/js/onsenui.min.js"></script>
     <script src="lib/onsenui/js/angular-onsenui.min.js"></script>
+    <script src="lib/angular/angular-sanitize.js"></script>
 
     <link rel="stylesheet" href="components/loader.css">
     <link rel="stylesheet" href="lib/onsenui/css/onsenui.css">
@@ -15,30 +16,19 @@
     <link rel="stylesheet" href="css/style.css">
 
     <script>
-        ons.bootstrap()
-          .controller('HelloController', function() {
-            this.world = 'World';
-          });
-        ons.ready(function() {
-            console.log("Onsen UI is ready!");
-        });
+      
     </script>
-</head>
-<body>
-    <ons-page ng-controller="HelloController as hello">
-        <ons-toolbar>
-        <div class="center">Introduction</div>
-        </ons-toolbar>
+    <script src="scripts/basic.js"></script>
 
-        <section style="margin: 10px;">
-        <p>What is your name?</p>
-        <p>
-          <ons-input modifier="underbar" ng-model="hello.world" placeholder="Your name" float></ons-input>
-        </p>
-        <p>
-          Hello, {{ hello.world || 'stranger' }}!
-        </p>
-        </section>
-    </ons-page>
+
+</head>
+<body ng-controller="BasicController">
+  <form>
+    memo:
+    <div>
+      <textarea ng-model="memo" cols="50" rows="7"></textarea>
+    </div>
+  </form>
+  <div ng-bind-html="memo | nl2br"></div>
 </body>
 </html>
